@@ -1,6 +1,8 @@
 # Module
 import config
-import bot_formatter
+import constants
+import roler
+from constants import ROLE_ADDED, ROLE_ALREADY_EXISTS
 from roler import RoleExists, MakeNewRole
 
 # Packages
@@ -12,7 +14,20 @@ from discord.ext import commands
 ########################################################
 # VARS
 ########################################################
+
 bot = commands.Bot(command_prefix=config.prefix)
+
+
+########################################################
+# FUNCTIONS
+########################################################
+
+def wrap(message):
+    return "```" + message + "```"
+
+async def send(ctx, output):
+    await ctx.send(wrap(output))
+
 
 ########################################################
 # BOT EVENTS
@@ -31,16 +46,12 @@ async def on_ready():
 ########################################################
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send(bot_formatter.format("pong!"))
-
-@bot.command()
-async def newrole(ctx, newRole):
-    if RoleExists(ctx.guild.roles, newRole):
-        await ctx.send(bot_formatter.format("already exists"))
+async def newrole(ctx, role):
+    if RoleExists(ctx.guild.roles, role):
+        await send(ctx, ROLE_ALREADY_EXISTS.format(role))
     else:
-        await MakeNewRole(ctx.guild, newRole)
-        await ctx.send(bot_formatter.format("Added new role"))
+        await MakeNewRole(ctx.guild, role)
+        await send(ctx, ROLE_ADDED.format(role))
 
 
 ########################################################
