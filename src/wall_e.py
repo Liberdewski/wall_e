@@ -1,8 +1,9 @@
 # Module
 import config
+import bot_formatter
 
 # Packages
-import asyncio
+# import asyncio
 import discord
 from discord.ext import commands
 
@@ -30,8 +31,8 @@ async def on_ready():
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send('```pong!```')
-
+    await ctx.send(bot_formatter.format("pong!"))
+    
 
 ########################################################
 # RUN THE BOT

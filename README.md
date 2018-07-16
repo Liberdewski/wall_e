@@ -1,8 +1,8 @@
 # CSSS Discord Bot (Wall-E)  
 
-![The One and Only, Lovable Wall-E](wall_e_pic.jpg) 
+![The One and Only, Lovable Wall-E](wall_e_pic.jpg)
 
-Wall-E, named after the lovable character [Wall-E](https://en.wikipedia.org/wiki/WALL-E), will hold all the scripts for the upcoming bot that will operate on the CSSS discord, located [here](https://discord.gg/Pf5Ncq3). This bot is owned by the CSSS and will be maintained by the current CSSS appointed Discord representative and the current bot development team. 
+Wall-E, named after the lovable character [Wall-E](https://en.wikipedia.org/wiki/WALL-E), will hold all the scripts for the upcoming bot that will operate on the CSSS discord, located [here](https://discord.gg/Pf5Ncq3). This bot is owned by the CSSS and will be maintained by the current CSSS appointed Discord representative and the current bot development team.
 
 
 ## Table of Contents
@@ -51,6 +51,7 @@ Pre-requisites: A Discord account.
 ### Part 2: Running the Bot
 
 Pre-requisites: `git`, `python3`, and `pip3`.
+Note: You will need to use Python 3.6.6 as Python 3.7 isn't currently supported by Discord.py.
 
 From a command line
 1. Run `git clone https://github.com/CSSS/wall_e.git`
